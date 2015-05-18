@@ -1,0 +1,16 @@
+{
+    "contents" : "##The first function, makeVector creates a special \"vector\", which is really a list containing a function to\n##1.set the value of the vector\n##2.get the value of the vector\n##3.set the value of the mean\n##4.get the value of the mean\nmakeVector <- function(x = numeric()) {\n  m <- NULL\n  set <- function(y) {\n    x <<- y\n    m <<- NULL\n  }\n  get <- function() x\n  setmean <- function(mean) m <<- mean\n  getmean <- function() m\n  list(set = set, get = get,\n       setmean = setmean,\n       getmean = getmean)\n}\n##The following function calculates the mean of the special \"vector\" created with the above function.\n##However, it first checks to see if the mean has already been calculated. \n##If so, it gets the mean from the cache and skips the computation. Otherwise, \n##it calculates the mean of the data and sets the value of the mean in the cache via the setmean function.\n##cachemean <- function(x, ...) {\n  m <- x$getmean()\n  if(!is.null(m)) {\n    message(\"getting cached data\")\n    return(m)\n  }\n  data <- x$get()\n  m <- mean(data, ...)\n  x$setmean(m)\n  m\n}",
+    "created" : 1431983289871.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "768354189",
+    "id" : "C4F29363",
+    "lastKnownWriteTime" : 1431982688,
+    "path" : "D:/GCMDocuments/DataScience/Assignment2/Assignment2.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

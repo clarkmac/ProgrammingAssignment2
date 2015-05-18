@@ -1,4 +1,6 @@
-## Put comments here that give an overall description of what your
+## The first function will create a specail "matrix" that can save its inverse
+## to cache.  The second function computes the inverse of this special "matrix" 
+## and returns it, unless it's already been cached.   
 ## functions do
 
 ## Write a short comment describing this function
