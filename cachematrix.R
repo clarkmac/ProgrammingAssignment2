@@ -6,16 +6,20 @@
 
 makeCacheMatrix <- function(x = matrix()) {
       mvar <- NULL
+## set the matrix       
       setmatrix <- function(yfree) {
             x <<- yfree
             mvar <<- NULL
       }
+## get the matrix into x?       
       getmatrix <- function() {
             x
       }      
-      setinverse <- function(inverse) {
-            mvar <<- mean
+## set the inverse of the matrix above matrix      
+      setinverse <- function() {
+            mvar <<- solve(getmatrix)
       }      
+## 
       getinverse <- function() {
             mvar
       }
@@ -30,7 +34,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-     m  <- x$getinverse()
+     mvar  <- x$getinverse()
      if(is.null(mvar)){
            
      }
