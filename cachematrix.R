@@ -5,14 +5,20 @@
 ## Write a short comment describing this function, sets m and y to Null
 
 makeCacheMatrix <- function(x = matrix()) {
-      m <- NULL
-      set <- function(y) {
-            x <<- y
-            m <<- NULL
+      mvar <- NULL
+      setmatrix <- function(yfree) {
+            x <<- yfree
+            mvar <<- NULL
       }
-      get <- function() x
-      setmatrix <- function(mean) m <<- mean
-      getmean <- function() m
+      getmatrix <- function() {
+            x
+      }      
+      setinverse <- function(inverse) {
+            mvar <<- mean
+      }      
+      getinverse <- function() {
+            mvar
+      }
 ## Out put a list      
       list(setmatrix = setmatrix, getmatrix = getmatrix,
            setinverse = setinverse,
@@ -24,4 +30,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+     m  <- x$getinverse()
+     if(is.null(mvar)){
+           
+     }
 }
